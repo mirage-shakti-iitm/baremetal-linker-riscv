@@ -4,6 +4,9 @@ maintainer: "Sai Venkata Krishnan <saiganesha5.svkv@gmail.com>"
 authors: "Malte Bargholz <malte@screenri.de>"
 homepage: "https://github.com/mirage-shakti-iitm/baremetal-linker-riscv"
 remove: [["rm" "-rf" "%{prefix}%/riscv-sysroot/lib/baremetal-linker-riscv"]]
-install: ["cp" "META" "opam" "linker.x" "%{prefix}%/riscv-sysroot/lib/baremetal-linker-riscv"]
+install: [
+	["mkdir" "-p" "%{prefix}%/riscv-sysroot/lib/baremetal-linker-riscv"]
+	["cp" "META" "opam" "linker.x" "%{prefix}%/riscv-sysroot/lib/baremetal-linker-riscv"]
+]
 synopsis: "Linker for OCaml on Baremetal-RiscV"
 flags: light-uninstall
