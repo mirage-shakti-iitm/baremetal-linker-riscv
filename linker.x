@@ -8,6 +8,11 @@ SECTIONS
 {
     . = 0x80000000;
 
+    .reserved:
+    {
+      .+=1048576;
+    }
+
     .text : {
          KEEP(*(.text.init))
 
