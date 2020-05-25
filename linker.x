@@ -8,12 +8,6 @@ SECTIONS
 {
     . = 0x80000000;
 
-
-    .shakti-tee :
-    {
-      *(.shakti-tee)
-    }
-    
     .text : {
          KEEP(*(.text.init))
 
