@@ -8,11 +8,6 @@ SECTIONS
 {
     . = 0x80000000;
 
-    .checkcap-stack-reserved:
-    {
-      .+=1048576;
-    }
-
     .text : {
          KEEP(*(.text.init))
 
@@ -21,6 +16,13 @@ SECTIONS
          *(.text.*)
          *(.gnu.linkonce.t.*)
     }
+
+    .checkcap-stack-reserved:
+    {
+      .+=1048576;
+    }
+
+
 
   . = ALIGN(16);
 /* rodata: Read-only data */
