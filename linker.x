@@ -17,9 +17,8 @@ SECTIONS
          *(.gnu.linkonce.t.*)
     }
 
-    .checkcap-stack-reserved:
-    {
-      .+=1048576;
+    .checkcap-stack-reserved :
+    { .+=1048576;
     }
 
 
