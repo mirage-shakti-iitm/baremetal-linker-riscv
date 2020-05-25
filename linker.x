@@ -8,7 +8,7 @@ SECTIONS
 {
     . = 0x80000000;
 
-      
+
     .shakti-tee :
     {
       *(.shakti-tee)
@@ -16,15 +16,7 @@ SECTIONS
 
     .text : {
          KEEP(*(.text.init))
-         /* cpp support:
-          * constructors, need to be aligned by 2 bytes.
-          * otherwise *ctor() crashes with an oob memory
-          * access */
-         . = ALIGN(16);
-         PROVIDE(__CTORS_START = .);
-         KEEP (*(.ctors*))
-         KEEP (*(.init_array*))
-         PROVIDE(__CTORS_END = .);
+
 
          *(.text)
          *(.text.*)
