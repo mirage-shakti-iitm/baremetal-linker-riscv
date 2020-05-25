@@ -8,6 +8,12 @@ SECTIONS
 {
     . = 0x80000000;
 
+
+    .shakti-tee :
+    {
+      *(.shakti-tee)
+    }
+    
     .text : {
          KEEP(*(.text.init))
 
@@ -15,11 +21,6 @@ SECTIONS
          *(.text)
          *(.text.*)
          *(.gnu.linkonce.t.*)
-    }
-
-    .shakti-tee :
-    {
-      *(.shakti-tee)
     }
 
   . = ALIGN(16);
