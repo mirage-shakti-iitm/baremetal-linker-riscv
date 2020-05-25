@@ -17,11 +17,6 @@ SECTIONS
          *(.gnu.linkonce.t.*)
     }
 
-    .checkcap-stack-reserved:
-    {
-      .+=1048576;
-    }
-
   . = ALIGN(16);
 /* rodata: Read-only data */
   .rodata :
