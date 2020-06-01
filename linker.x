@@ -18,7 +18,7 @@ SECTIONS
     }
 
     .checkcap-stack-reserved :
-    { . += 0x1048576;
+    { . += 0x100000;
     }
 
 
