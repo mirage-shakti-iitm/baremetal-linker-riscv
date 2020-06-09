@@ -21,7 +21,9 @@ SECTIONS
     { . += 0x100000;
     }
 
-
+    .capability-matrix-reserved :
+    { . += 0x100000;
+    }
 
   . = ALIGN(16);
 /* rodata: Read-only data */
