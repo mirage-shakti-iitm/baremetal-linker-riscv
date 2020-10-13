@@ -14,7 +14,7 @@ SECTIONS
           * constructors, need to be aligned by 2 bytes.
           * otherwise *ctor() crashes with an oob memory
           * access */
-         . = ALIGN(16);
+         . = ALIGN(1);
          PROVIDE(__CTORS_START = .);
          KEEP (*(.ctors*))
          KEEP (*(.init_array*))
@@ -25,7 +25,7 @@ SECTIONS
          *(.gnu.linkonce.t.*)
     }
 
-  . = ALIGN(16);
+  . = ALIGN(1);
 /* rodata: Read-only data */
   .rodata :
   {
@@ -40,13 +40,13 @@ SECTIONS
   /*--------------------------------------------------------------------*/
   /* HTIF, isolated onto separate page                                  */
   /*--------------------------------------------------------------------*/
-  . = ALIGN(0x1000);
+  . = ALIGN(0x1);
   .htif :
   {
     PROVIDE( __htif_base = . );
     *(.htif)
   }
-  . = ALIGN(0x1000);
+  . = ALIGN(0x1);
 
 
   /*--------------------------------------------------------------------*/
@@ -54,7 +54,7 @@ SECTIONS
   /*--------------------------------------------------------------------*/
 
   /* Start of initialized data segment */
-  . = ALIGN(16);
+  . = ALIGN(1);
    _fdata = .;
 
   /* data: Writable data */
@@ -72,7 +72,7 @@ SECTIONS
   _edata = .;
 
   /* Have _gp point to middle of sdata/sbss to maximize displacement range */
-  . = ALIGN(16);
+  . = ALIGN(1);
   _gp = . + 0x800;
 
   /* Writable small data segment */
@@ -89,7 +89,7 @@ SECTIONS
   /*--------------------------------------------------------------------*/
 
   /* Start of uninitialized data segment */
-  . = ALIGN(8);
+  . = ALIGN(1);
   _fbss = .;
 
   /* Writable uninitialized small data segment */
@@ -114,7 +114,7 @@ SECTIONS
   _ebss = .;
 
 
-  _end = ALIGN(8);
+  _end = ALIGN(1);
   /* End of uninitialized data segment
    * used for heap allocation
    */ 
