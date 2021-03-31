@@ -79,6 +79,8 @@ SECTIONS
   .sdata :
   {
     *(.sdata)
+    PROVIDE( _impure_ptr = . );
+    _impure_ptr = .;
     *(.sdata.*)
     *(.srodata.*)
     *(.gnu.linkonce.s.*)
