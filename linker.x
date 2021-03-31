@@ -14,7 +14,7 @@ SECTIONS
           * constructors, need to be aligned by 2 bytes.
           * otherwise *ctor() crashes with an oob memory
           * access */
-         . = ALIGN(16);
+         /* . = ALIGN(16); */
          PROVIDE(__CTORS_START = .);
          KEEP (*(.ctors*))
          KEEP (*(.init_array*))
