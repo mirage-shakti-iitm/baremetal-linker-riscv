@@ -54,7 +54,7 @@ SECTIONS
   /*--------------------------------------------------------------------*/
 
   /* Start of initialized data segment */
-  . = ALIGN(16);
+  . = ALIGN(2);
    _fdata = .;
 
   /* data: Writable data */
