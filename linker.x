@@ -6,7 +6,7 @@ ENTRY( reset_vector )
 
 SECTIONS
 {
-    . = 0x1000000;
+    . = 0x80000000;
 
     .text : {
          KEEP(*(.text.init))
